@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+{% block navigation %}
+{% include 'partials/nav.html' with user=user %}
+{% endblock %}
+
+{% block main %}
+<div class="flex align-items-center" style="margin-top:20px;">
+	{% if form_type == "signup" %}
+	{% include 'authentication/signup.html' with form=form %}
+	{% else %}
+	<div class="pysm" style="width:320px;">
+		<button class="tw-primary-theme btn-flx js-signin-social-btn">
+			<span>Log in with Twitter</span>
+		</button>
+	</div>
+	{% include 'authentication/signin.html' with form=form %}
+	<span class="form-footer-link pyxs"
+	> New? 
+		<span class="highlight form-footer-link-action" 
+		> <a href="{% url 'auth:signup' %}">Create an account</a></span>
+	</span>
+	{% endif %}
+</div>	
+{% endblock %}

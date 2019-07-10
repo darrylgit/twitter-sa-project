@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block header %}
+<header class="container flex align-items-center">
+	<h3>Twitter <small>Sentiment Analysis</small></h3>
+	{% include 'search/search.html' with form=form %}
+</header>
+{% endblock %}
+
+{% block main %}
+<div class="container" style="padding-top:50px;max-width:576px;">
+	{% include 'analysis/results.html' %}
+</div>
+{% endblock %}

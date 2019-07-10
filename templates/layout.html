@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block styles %} 
+<!-- Global Styles -->
+<link rel="stylesheet" href="{% static 'css/ds.css' %}">
+<link rel="stylesheet" href="{% static 'css/ds-font.css' %}">
+<link rel="stylesheet" href="{% static 'css/ds-nav.css' %}">
+<link rel="stylesheet" href="{% static 'css/ds-grid.css' %}">
+{% endblock %}
+
+{% block layout %}
+
+	{% block navigation %} {% endblock %}
+	
+	<div class="container-fluid no-gutters" style="padding-top:100px;">
+		{% block header %}{% endblock %}
+
+		{% block main %}{% endblock %}
+	</div>
+
+	{% block footer %}{% endblock %}
+
+{% endblock %}
+
+{# Local scripts #}
+{% block scripts %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/ds.js.bundle.js' %}"></script>
+    {# extra scripts #}
+    {% block extrascripts %}
+    {% endblock %}
+{% endblock %}

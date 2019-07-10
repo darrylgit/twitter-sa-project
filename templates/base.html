@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+    <head>
+        <title>Twitter Sentiment Analysis | {% block title %}{% endblock %}</title>
+
+        <meta charset="UTF-8">
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+        <meta name="description" content="{% block description %}{% endblock %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+        {# Block where global CSS will go. #}
+        {% block styles %}{% endblock %}
+
+        {# Additional CSS - specific to certain pages #}
+        {% block extrastyles %}{% endblock %}
+
+        {% block tracking %}
+            {# Default to using Google analytics #}
+        {% endblock %}
+    </head>
+
+    <body>
+        {# Main content goes in this 'layout' block #}
+        {% block layout %}{% endblock %}
+
+        {# Local scripts #}
+        {% block scripts %}
+        {% endblock %}
+
+        {# Additional JS scripts #}
+        {% block extrascripts %}{% endblock %}
+    </body>
+</html>

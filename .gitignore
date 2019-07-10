@@ -1,0 +1,13 @@
+*.pyc
+*~
+__pycache__
+db.sqlite3
+.env
+
+settings
+migrations
+static
+apps/authentication
+apps/api/twitter/
+
+.DS_Store

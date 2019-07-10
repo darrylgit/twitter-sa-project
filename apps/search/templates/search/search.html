@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<form action="{% url 'analysis:index' %}" method="post" style="width:320px;">
+	{% csrf_token %}
+	{{ form.non_field_errors }}
+	<div class="form-group">
+		{{ form.query.errors }}
+		<div class="flex-row align-items-center pyxxxs">
+			<input name="{{ form.query.html_name }}" class="form-control js-search-query" id="{{ form.query.id_for_label }}" type="text"
+			style="padding:6px; font-size:.9rem;" />
+			<button class="icon " style="font-size:24pt">search</button>
+		</div>
+	</div>
+</form>

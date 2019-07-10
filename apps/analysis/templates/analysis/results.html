@@ -1,0 +1,30 @@
+<div class="container">
+	{% if ptweets or ntweets or netweets %}
+	{% if ptweets %}
+	<p class="highlight">{{ptweets.0}}% positive tweets</p>
+	<div style="padding:15px 0;">
+		{% for pt in ptweets.1 %}
+		<p style="font-size:10pt;padding:10px 0;">{{pt}}</p>
+		{% endfor %}
+	</div>
+	{% endif %}
+	{% if ntweets %}
+	<p class="highlight">{{ntweets.0}}% negative tweets</p>
+	<div style="padding:15px 0;">
+		{% for nt in ntweets.1 %}
+		<p style="font-size:10pt;padding:10px 0;">{{nt}}</p>
+		{% endfor %}
+	</div>
+	{% endif %}
+	{% if netweets %}
+	<p class="highlight">{{netweets.0}}% neutral tweets</p>
+	<div style="padding:15px 0;">
+		{% for ne in netweets.1 %}
+		<p style="font-size:10pt;padding:10px 0;">{{ne}}</p>
+		{% endfor %}
+	</div>
+	{% endif %}
+	{% else %}
+	<p style="font-size:10pt;padding:10px 0;">No results found ...</p>
+	{% endif %}
+</div>

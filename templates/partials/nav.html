@@ -1,0 +1,15 @@
+{% block navigation %}
+<nav class="main hpx50 bg-blue-light">
+	<a href="{% url 'index' %}" class="brand">Home</a>
+	<ul class="nav-items nav-items-end">
+		{% if user.is_authenticated %}
+		<form action="{% url 'auth:signout' %}" method="post">
+			{% csrf_token %}
+			<button class="li">Logout</button>
+		</form>
+		{% else %}
+		<a class="li" href="{% url 'auth:signin' %}">Login</a>
+		{% endif %}
+	</ul>
+</nav>
+{% endblock %}
